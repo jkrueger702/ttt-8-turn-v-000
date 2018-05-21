@@ -16,14 +16,8 @@ def move(board, position, character = "X")
 end
 
 def valid_move?(board, index)
-  if index > 0
-    index-1
-  end
-  if index > 8
-    false
-  elsif position_taken?(board, index)
-    false
-  else
+  if index.between?(0,8) && !position_taken?(board, index)
+    
     true
   end
 end
