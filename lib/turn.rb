@@ -15,6 +15,9 @@ def move(board, position, character = "X")
   board[position] = character
 end
 
+def turn(board)
+  puts "Please enter 1-9:"
+
 def valid_move?(board, index)
   if index.between?(0,8) && !position_taken?(board, index)
     
