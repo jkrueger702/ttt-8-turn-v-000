@@ -21,17 +21,12 @@ def turn(board)
   index = input_to_index(user_input)
 end
 
-if valid_move?(board,index)
-    puts 'valid move'
-    move(board, index, token)
-    display_board(board)
-   else
-    puts 'try again'
-    turn(board)
-  end
-  display_board(board)
-end
+def valid_move?(board, index)
+  if index.between?(0,8) && !position_taken?(board, index)
 
+    true
+  end
+end
 
 def position_taken?(board, index)
   if  board[index] == "" || board[index] == " " || board[index] == nil
